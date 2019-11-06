@@ -1,23 +1,15 @@
 // ==UserScript==
-// @name         ✔️ Krunker.io WheelChair (Mod Menu) [AnonCheat]
-// @namespace    https://github.com/AnonCheats
+// @name         Krunker Powered WheelChair
+// @namespace    https://github.com/hrt
 // @version      1.8.5
 // @description  WheelChair
-// @author       AnonCheat
+// @author       hrt x ttap x MasterP
 // @match        *://krunker.io/*
 // @run-at       document-start
 // @require      https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js
 // @require      https://krunkr.com/assets/js/canvas.gui.js?ver=0.7
 // @grant        none
 // ==/UserScript==
-
-document.title = "Krunker.io WheelChair [AnonCheat]";
-javascript:(function(){var script=document.createElement('script');script.onload=function(){var stats=new Stats();document.body.appendChild(stats.dom);requestAnimationFrame(function loop(){stats.update();requestAnimationFrame(loop)});};script.src='//mrdoob.github.io/stats.js/build/stats.min.js';document.head.appendChild(script);})()
-alert("[WheelChair Loaded]. If doesn't see confirm message in chat try reload page different times.")
-document.getElementById('chatList').innerHTML = '<div class="chatItem" style="word-break:break-all;overflow-wrap:break-word;"><span class="chatMsg"><span style="color:#DC143C">Confirm Message</span><img style="opacity:2.0;margin-right:9px;" <span style="color:#FFD700">AnonCheat</span><div class="chatItem" style="word-break:break-all;overflow-wrap:break-word;"><span class="chatMsg"><img style="opacity:0.7;margin-right:9px;"<span style="color: #000000">[WhellChair Injected] Make sure you are not playing on you primary account!.</span></span></span></div></div>';
-document.getElementById("instructions").style.color = "White";
-document.getElementById('instructions').innerHTML = 'Launchig WheelChair...';
-
 WebFont.load({
    google: {
       families: ['Roboto']
