@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         Krunker.io WheelChair [AnonCheat]
+// @name         ✔️ Krunker.io WheelChair [AnonCheat]
 // @namespace    https://github.com/AnonCheat
 // @version      1.8.5
 // @description  WheelChair
@@ -20,7 +20,7 @@ WebFont.load({
       aimbot: true,
       silentAim: false,
       boxEsp: true,
-      boxColor: "rgba(244,100,80,1)",
+      boxColor: "rgba(0,0,0,1)",
       weaponEsp: true,
       healthEsp: true,
       nameEsp: true,
@@ -29,7 +29,7 @@ WebFont.load({
       autoJump: true,
       orgNameTags: false,
       aimThroughWalls: false,
-      chamsColorStr: "rgba(255,0,0,1)",
+      chamsColorStr: "rgba(255,255,255,1)",
       chamsRed: 255,
       chamsBlue: 0,
       chamsGreen: 0,
