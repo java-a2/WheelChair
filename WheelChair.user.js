@@ -123,7 +123,7 @@ WebFont.load({
    var hideHook = function (fn, oFn) {
       fn.toString = oFn.toString.bind(oFn);
    }
-   const menu = new MyGUI(false, 0, 0, 250, 250, styles, "wheelchair", 1)
+   const menu = new MyGUI(false, 0, 0, 250, 250, styles, "WheelChair by AnonCheat", 1)
    menu.remember(window.options)
    window.menu = menu;
    const poweredWheelAimbot = menu.addFolder("Aimbot", true)
