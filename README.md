@@ -1,1 +1,1 @@
-# Krunker.io WheelChair Auto-Update Script
+# Krunker.io WheelChair Auto-Update Script.
