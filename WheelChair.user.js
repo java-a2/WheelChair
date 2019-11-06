@@ -1,9 +1,9 @@
 // ==UserScript==
-// @name         Krunker Powered WheelChair
-// @namespace    https://github.com/hrt
+// @name         Krunker.io WheelChair [AnonCheat]
+// @namespace    https://github.com/AnonCheat
 // @version      1.8.5
 // @description  WheelChair
-// @author       hrt x ttap x MasterP
+// @author       AnonCheat
 // @match        *://krunker.io/*
 // @run-at       document-start
 // @require      https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js
@@ -213,10 +213,7 @@ WebFont.load({
       };
       // runs once
       if (!window.init) {
-         window.init = true;
-         /*************************************/
-         /* crimpeek / faster bullets removed */
-         /*************************************/
+         window.init = true
          window.drawVisuals = function (c, scalingFactor, perspective) {
             if (!window.ctx) {
                window.ctx = c.getContext("2d")
@@ -232,7 +229,6 @@ WebFont.load({
                   continue;
                }
                // find min x, max x, min y, max y
-               // optimisation: we can already tell what ymin ymax is
                var xmin = Infinity;
                var xmax = -Infinity;
                var ymin = Infinity;
@@ -270,7 +266,6 @@ WebFont.load({
 
                c.save();
                c.scale(scalingFactor, scalingFactor)
-               // perfect box esp
 
 
                var distanceScale = Math.max(.3, 1 - math.getD3D(worldPosition.x, worldPosition.y, worldPosition.z, e.x, e.y, e.z) / 600);
@@ -325,7 +320,6 @@ WebFont.load({
                c.restore();
 
                // skelly chams
-               // note: this should probably be else where - it affects all players
                var material = e.legMeshes[0].material;
                if (window.options.chams) {
                   material.alphaTest = 1;
@@ -366,7 +360,6 @@ WebFont.load({
          }
 
          // experimental prediction
-         // just use normal xyz values instead for potentially better aim :shrug:
          var scale = Math.min(1.6, e.dt / (consts.serverSendRate * consts.interpolation));
          // this check is so that we don't shoot people that just respawn
          if (math.getD3D(e.x2, e.y2, e.z2, e.x, e.y, e.z) < 100) {
@@ -391,13 +384,10 @@ WebFont.load({
       }
 
       // aimbot
-      // hrt's big brain got a six pack
       var ty = controls.object.rotation.y,
          tx = controls.pchObjc.rotation.x;
       if (closest) {
          var target = closest;
-         // No idea why public cheats are using target distance in aimbot calc
-         // No idea why it's so difficult for people to not use magic numbers here
          var y = target.y3 + consts.playerHeight - (consts.headScale /* + consts.hitBoxPad*/ ) / 2 - target.crouchVal * consts.crouchDst;
          if (me.weapon.nAuto && me.didShoot) {
             inputs[SHOOT] = 0;
@@ -432,14 +422,11 @@ WebFont.load({
       }
 
    }
-   // only big iq people read this ttap#4547
-   // big up my boy hrt and ttap for releasing
    const handler = {
       construct(target, args) {
          if (args.length == 2 && args[1].includes('Seen')) {
             var script = args[1];
 
-            // anti retard / version fix
             var version = script.match(/\w+\['exports'\]=(0[xX][0-9a-fA-F]+);/)[1];
             if (version !== "0x8d71") {
                document.write('Version missmatch, wait for hrt');
@@ -457,7 +444,6 @@ WebFont.load({
 
             var ttapParams = [me, inputs, world, consts, math];
 
-            // Doesn't make sense to hook aimbot anywhere else - unlike every other public cheat
             script = replace.call(script, hook, tokens[0] + '(' + hrtCheat.toString() + ')(' + ttapParams + '),');
 
             //Remove clear rect inside overlay render.
@@ -478,8 +464,6 @@ WebFont.load({
             // no zoom
             script = replace.call(script, /,'zoom':.+?(?=,)/g, ",'zoom':1");
 
-            // an extremely old canHit / autowall function creator that doesn't alter canSee
-            // dumb asf but if it still works then should I touch it :thinking:
             var canSee = script.match(/this\['canSee'\]\=function.+?(?=return null;})/)[0] + "return null;}";
             var canHit = replace.call(canSee, /canSee/g, "canHit");
             canHit = replace.call(canHit, /\|\|0x0;/, "||0x0;var pcount=0;");
@@ -500,8 +484,10 @@ WebFont.load({
          return new target(...args);
       }
    };
-   // credits for bypass: https://github.com/hrt/
+
    var original_Function = Function;
    Function = new Proxy(Function, handler);
    hideHook(Function, original_Function);
 })()
+
+ // Credit to: https://github.com/hrt
