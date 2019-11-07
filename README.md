@@ -1,1 +1,3 @@
-# Krunker.io WheelChair Auto-Update Script.
+# Krunker.io WheelChair Script.
+
+Check /WheelChair-Updates for all updates!
