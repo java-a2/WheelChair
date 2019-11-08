@@ -3,6 +3,7 @@ I will pubblish 1.8.7 update soon...
 https://www.youtube.com/channel/UCnnqMGII7LHvvn1LUiU55eg
 
 # Krunker.io WheelChair Script.
+HOW TO USE IT
 
 1> Install Tampermonkey extension
 
